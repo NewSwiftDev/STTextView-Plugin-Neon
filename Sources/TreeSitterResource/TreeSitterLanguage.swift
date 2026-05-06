@@ -26,6 +26,8 @@ import TreeSitterMarkdown
 import TreeSitterMarkdownQueries
 import TreeSitterPHP
 import TreeSitterPHPQueries
+import TreeSitterPlain
+import TreeSitterPlainQueries
 import TreeSitterPython
 import TreeSitterPythonQueries
 import TreeSitterRuby
@@ -56,6 +58,7 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
     case json
     case markdown
     case php
+    case plain
     case python
     case ruby
     case rust
@@ -91,6 +94,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
             tree_sitter_markdown()
         case .php:
             tree_sitter_php()
+        case .plain:
+            tree_sitter_plain()
         case .python:
             tree_sitter_python()
         case .ruby:
@@ -136,6 +141,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
             TreeSitterMarkdownQueries.Query.highlightsFileURL
         case .php:
             TreeSitterPHPQueries.Query.highlightsFileURL
+        case .plain:
+            TreeSitterPlainQueries.Query.highlightsFileURL
         case .python:
             TreeSitterPythonQueries.Query.highlightsFileURL
         case .ruby:
@@ -180,6 +187,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
         case .markdown:
             nil
         case .php:
+            nil
+        case .plain:
             nil
         case .python:
             nil
